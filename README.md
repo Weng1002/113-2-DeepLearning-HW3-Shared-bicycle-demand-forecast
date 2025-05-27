@@ -21,6 +21,6 @@ sample_submission.csv：作業繳交格式範例（預設為 0，請更新預測
 
 Readme.txt：相關參數說明供同學參考
 
-注意： 
-雖然 test 資料是以每小時（hourly）為單位進行預測，但在提交作業時，請將「同一天」的24小時預測結果加總，轉換為「每日（daily）預測值」後，再填寫到 sample_submission.csv 中。
+注意：雖然 test 資料是以每小時（hourly）為單位進行預測，但在提交作業時，請將「同一天」的24小時預測結果加總，轉換為「每日（daily）預測值」後，再填寫到 sample_submission.csv 中。
+
 ---
