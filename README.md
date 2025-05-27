@@ -84,3 +84,35 @@ Readme.txt：相關參數說明供同學參考
 
 ![Confusion matrix](Images/confusion_matrix.png)
 
+***預測流程說明***
+
+預測流程分為以下幾步：
+
+1.	前處理：
+   
+o	針對 test 資料加上所有與訓練相同的時間與交互特徵
+
+o	使用相同的 MinMaxScaler 對數值欄位正規化
+
+o	進行 one-hot 編碼後補齊欄位，與訓練資料欄位完全對齊
+
+3.	Sliding windows建立：
+   
+o	建構過去 24 小時的Sliding windows序列，視窗從訓練尾端接到 test 起點
+
+o	每個時間步使用目前特徵組預測當下租借數（log1p(cnt)）
+
+5.	推理與還原：
+   
+o	預測值為 log1p(cnt)，最後透過 expm1() 進行還原
+
+o	逐步更新 test 資料，實現「自回歸預測」過程
+
+7.	輸出結果：
+   
+o	將每筆 test 資料依據日期彙總，產出每日租借總量預測值
+
+o	輸出為符合指定格式的 submission.csv。
+
+
+
