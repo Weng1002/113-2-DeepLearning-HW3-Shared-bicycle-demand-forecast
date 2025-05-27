@@ -153,3 +153,26 @@ o	輸出為符合指定格式的 submission.csv。
 | 96          | 0.3353         | 0.3010           |
 | 128         | 0.2870         | **0.2803**       |
 
+### 分析：
+
+表一得知window_size = 24 表現最佳，能抓住一天的租借週期性，且訓練與驗證差距小。
+
+表二，兩層 LSTM 足夠學到時序資訊，繼續疊層反而造成過度擬合。
+
+表三，hidden_size = 128 拿到最低驗證 loss，但 64 結構更簡單且差距不大。
+
+表四得知，若使用 3 層，必須配大 hidden_size 才能穩定，但效果仍不如 2 層。
+
+---
+
+## 其他有助於說明的分析(資料前分析)
+
+![Data descripts](Images/data_descripts.png)
+
+![Hour analysis](Images/hour_analysis.png)
+
+![Weather analysis](Images/weather_analysis.png)
+
+![Days analysis](Images/days_analysis.png)
+
+![SHAP analysis](Images/SHAP_analysis.png)
