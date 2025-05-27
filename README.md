@@ -82,5 +82,5 @@ Readme.txt：相關參數說明供同學參考
 
 •	temp_x_hum、atemp_x_wind：氣象交互特徵，模擬體感天氣的組合因素
 
-![Confusion matrix](Images/confusion matrix.png)
+![Confusion matrix](Images/confusion_matrix.png)
 
